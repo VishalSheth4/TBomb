@@ -773,7 +773,8 @@ except Exception:
     pass
 while True:
     pn = ""
-    cc = input("\tEnter Your Country Code (Without +) : ")
+    # cc = input("\tEnter Your Country Code (Without +) : ")
+    cc = 91
     if '+' in cc:
         tc = list(cc)
         tc.remove('+')
@@ -808,17 +809,17 @@ if type == 1:
 elif type == 0:
     if cc == "91":
         nm = int(input("Enter Number of Messages To Send(0 For Unlimited): "))
-        dl = float(
-            input("Enter Delay time (in seconds) [Recommended 2 sec ] : "))
+        # dl = float(input("Enter Delay time (in seconds) [Recommended 2 sec ] : "))
+        dl = 1
     else:
         nm = int(input("Enter Number of Messages To Send: "))
         dl = float(
             input("Enter Delay time (in seconds) [Recommended 10 sec ] : "))
 maxlim = 0
 if cc == "91":
-    maxlim = 1000
+    maxlim = 5000
 else:
-    maxlim = 1000000000000000000000000000
+    maxlim = 1000
 if nm > maxlim:
     print('\n\n\tSorry Due To Misuse Of This Script We Only Provide ' +
           str(maxlim) + ' SMS At Once...\n\n')
@@ -840,6 +841,8 @@ if not cc.strip() == "91":
         banner()
         exit()
     ch = [0, 14, 15, 16]
+    start(pn, nm, dl, ch, str(cc))
+    start(pn, nm, dl, ch, str(cc))
     start(pn, nm, dl, ch, str(cc))
     exit()
 ch = [i for i in range(17)]
