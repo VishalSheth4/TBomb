@@ -774,7 +774,7 @@ except Exception:
 while True:
     pn = ""
     # cc = input("\tEnter Your Country Code (Without +) : ")
-    cc = 91
+    cc = '91'
     if '+' in cc:
         tc = list(cc)
         tc.remove('+')
