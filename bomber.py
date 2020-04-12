@@ -810,7 +810,7 @@ elif type == 0:
     if cc == "91":
         nm = int(input("Enter Number of Messages To Send(0 For Unlimited): "))
         # dl = float(input("Enter Delay time (in seconds) [Recommended 2 sec ] : "))
-        dl = 1
+        dl = 3
     else:
         nm = int(input("Enter Number of Messages To Send: "))
         dl = float(
@@ -861,7 +861,8 @@ if cbomb:
     start(pn, nm, dl, chl, str(cc))
     exit()
 if nm == 0:
-    nt = int(input("\tNumber Of Threads(10 to 20) : "))
+    # nt = int(input("\tNumber Of Threads(10 to 20) : "))
+    nt = 25
     if nt <= 0 or nt >= 30:
         print('\tTBomb Shows Better Result in 10 to 25 Threads\n\t\tStill Continuing....')
     print("\n\nPlease Remember That This Is in Experimental Stage And Is Incredibly Fast...")
