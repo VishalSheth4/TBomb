@@ -673,7 +673,7 @@ def start(target, counter, delay, ch, cc):
         except Exception:
             if cc == "91":
                 print('Sorry All APIs Have Expired Please Update TBomb')
-                input('Press Enter To Exit...')
+                # input('Press Enter To Exit...')
                 exit()
             else:
                 if success > 0:
@@ -808,9 +808,10 @@ if type == 1:
     dl = float(input("Enter Delay time (in seconds) [Recommended 10 sec ] : "))
 elif type == 0:
     if cc == "91":
-        nm = int(input("Enter Number of Messages To Send(0 For Unlimited): "))
+        # nm = int(input("Enter Number of Messages To Send(0 For Unlimited): "))
+        nm = 0
         # dl = float(input("Enter Delay time (in seconds) [Recommended 2 sec ] : "))
-        dl = 3
+        dl = 5
     else:
         nm = int(input("Enter Number of Messages To Send: "))
         dl = float(
@@ -830,20 +831,19 @@ if not cc.strip() == "91":
         print(
             '\t\tSorry But Call Bombing is Currently Supported Only For Indian Numbers!!!!')
         print()
-        input('Press Enter To Exit....')
+        # input('Press Enter To Exit....')
         print('\n\n')
         banner()
         exit()
     cnt = 0
     if pn.strip() == '' or dl <= 0 or nm <= 0 or cc.strip() == '' or cc.find('+') != -1:
         print('\n\n\tSeems Like You Have Given Wrong Inputs...')
-        input('\n\t\tPress Enter To Exit...')
+        # input('\n\t\tPress Enter To Exit...')
         banner()
         exit()
     ch = [0, 14, 15, 16]
-    start(pn, nm, dl, ch, str(cc))
-    start(pn, nm, dl, ch, str(cc))
-    start(pn, nm, dl, ch, str(cc))
+    while(1):
+        start(pn, nm, dl, ch, str(cc))
     exit()
 ch = [i for i in range(17)]
 cbomb = False
@@ -862,7 +862,7 @@ if cbomb:
     exit()
 if nm == 0:
     # nt = int(input("\tNumber Of Threads(10 to 20) : "))
-    nt = 25
+    nt = 15
     if nt <= 0 or nt >= 30:
         print('\tTBomb Shows Better Result in 10 to 25 Threads\n\t\tStill Continuing....')
     print("\n\nPlease Remember That This Is in Experimental Stage And Is Incredibly Fast...")
@@ -894,13 +894,10 @@ if nm == 0:
         l = count_inf
         print("    Total Number of Requests Sent : ", l)
         if int(l) > maxlim:
-            print('\n\n\tSorry Due To Misuse Of This Script We Only Provide ' +
-                  str(maxlim) + ' SMS At Once...\n\n')
-            input('Press Enter To Exit...')
             os.system('rm *xxx* > /dev/null 2>&1')
             banner()
             exit()
-        time.sleep(1)
+        time.sleep(5)
         if ci % 3 == 0:
             checkinternet()
 else:
